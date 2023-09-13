@@ -1,7 +1,8 @@
 EXE=picprog
 EXECS= $(EXE) compare
 CC = gcc
-CFLAGS = -g -O0 -std=gnu99 -DVERSION=\"r$(shell svn info | grep 'Last Changed Rev:' | sed 's/[^0-9]//g')\"
+VERSION = $(shell git branch --show-current)-$(shell git describe --always)
+CFLAGS = -g -O0 -std=gnu99 -DVERSION=\"$(VERSION)\"
 
 LDFLAGS =
 
