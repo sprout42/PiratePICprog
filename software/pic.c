@@ -149,13 +149,13 @@ const struct pic_chip_t pic_chip[] = {
 		//0x1FC00000-0x1FC00BFF (3 KB) Boot Flash Memory Address (Bytes)
 		//0x1D000000-0x1D007FFF (32 KB) Program Flash Memory Address (Bytes)
 		.memmap = {
-			[PIC_MEM_FLASH] = {
-				.base = 0x0000,
-				.size = 256*1024, // 32KB ?
-			},
 			[PIC_MEM_EEPROM] = {
+				.base = 0x1FC00000,
+				.size = 3*1024,
+			},
+			[PIC_MEM_FLASH] = {
 				.base = 0x1D000000,
-				.size = 3
+				.size = 32*1024,
 			}
 		}
 	},
@@ -164,19 +164,40 @@ const struct pic_chip_t pic_chip[] = {
 		//.ID = 0x053, // lower 3 is some form of family id? it's always 053
 		.ID = 0x04A04000,
 		.family = FAMILY_32MX12x,
-		//PIC32MX120F032B
+		//PIC32MX220F032B
 		//32 Row Size (Instr. Words)
 		//256 Page Size (Instr. Words)
 		//0x1FC00000-0x1FC00BFF (3 KB) Boot Flash Memory Address (Bytes)
 		//0x1D000000-0x1D007FFF (32 KB) Program Flash Memory Address (Bytes)
 		.memmap = {
-			[PIC_MEM_FLASH] = {
-				.base = 0x0000,
-				.size = 256*1024, // 32KB ?
-			},
 			[PIC_MEM_EEPROM] = {
+				.base = 0x1FC00000,
+				.size = 3*1024,
+			},
+			[PIC_MEM_FLASH] = {
 				.base = 0x1D000000,
-				.size = 3
+				.size = 32*1024,
+			}
+		}
+	},
+	{
+		.name = "PIC32MX270F256D",
+		//.ID = 0x053, // lower 3 is some form of family id? it's always 053
+		.ID = 0x0660A053,
+		.family = FAMILY_32MX12x,
+		//PIC32MX270F256D
+		//32 Row Size (Instr. Words)
+		//256 Page Size (Instr. Words)
+		//0x1FC00000-0x1FC00BFF (3 KB) Boot Flash Memory Address (Bytes)
+		//0x1D000000-0x1D03FFFF (256 KB) Program Flash Memory Address (Bytes)
+		.memmap = {
+			[PIC_MEM_EEPROM] = {
+				.base = 0x1FC00000,
+				.size = 3*1024,
+			},
+			[PIC_MEM_FLASH] = {
+				.base = 0x1D000000,
+				.size = 256*1024,
 			}
 		}
 	},
